@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<h1>{% trans "Registration complete" %}</h1>
+{% blocktrans %}
+Your new {{site.domain}} Account is created, and you will get an e-mail to activate it, soon.
+Please click the activation link in the e-mail to finish creating your account.
+Hello {{user}}.<br />
+<p />
+Have a lot of fun using {{site.domain}}.
+{% endblocktrans %}
+{% endblock %}

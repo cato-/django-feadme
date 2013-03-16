@@ -1,0 +1,11 @@
+{% load i18n %}
+{% load hosts %}
+{% host_url registration.views.activate on www activation_key as activation_link %}
+{% blocktrans %}
+Hello.
+Your new {{site.domain}} account is ready.
+Please click this activation link to finish your registration:
+<{{activation_link}}>
+
+Please note, that this link is only valid for {{expiration_days}} days.
+{% endblocktrans %}

@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<h1>{% trans "Activation failed" %}</h1>
+{% blocktrans %}
+Sorry, your activation key is invalid. <br />
+Please make sure, that the link is the same as the one in your activation e-mail.
+{% endblocktrans %}
+{% endblock %}

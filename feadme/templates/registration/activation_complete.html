@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+<h1>{% trans "Activation complete" %}</h1>
+{% blocktrans %}
+Your new {{site.domain}} Account is ready.
+You can now use your username and password to login.
+<p />
+Have a lot of fun using {{site.domain}}.
+{% endblocktrans %}
+{% endblock %}
