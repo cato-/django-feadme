@@ -2,6 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {% load i18n static %}
+{% load url from future %}
 <html>
 <!--
   Feedjack LostWoods theme
@@ -27,6 +28,18 @@
         <h1><a href="{% url "landing" %}">{{ site.name }}</a></h1>
           {% blocktrans %}A <a href="http://www.feedjack.org/" class="love_feedjack" title="Feedjack Powered">Feedjack</a> Planet powered web based Feedreader{% endblocktrans %}
     </div>
+    {% if user.is_authenticated %}
+        {% blocktrans %}You are logged in as <b>{{ user }}</b>{% endblocktrans %}
+        <a href="{% url "django.contrib.auth.views.logout" %}?next=/">{% trans "Logout" %}</a>
+    {% else %}
+        {% url "django.contrib.auth.views.login" as loginurl %}
+        {% url "registration.views.register" as registerurl %}
+        {% blocktrans %}
+        <a href="{{ loginurl }}?next=/">login</a>
+        or
+        <a href="{{ registerurl }}">register</a>.
+        {% endblocktrans %}
+    {% endif %}
 </div>
 <div id="content">
 {% block content %}{% endblock %}
