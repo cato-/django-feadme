@@ -1,1 +1,1 @@
-{% load i18n %}{% blocktrans %}Your {{site.domain}} Account{% endblocktrans %}
+{% load hosts %}{% load i18n %}{% host_url feedjack.views.mainview on www as mainurl %}{% blocktrans %}Your {{ mainurl }} Account{% endblocktrans %}

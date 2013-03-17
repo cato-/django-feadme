@@ -1,11 +1,14 @@
+{% spaceless %}
 {% load i18n %}
 {% load hosts %}
 {% host_url registration.views.activate activation_key=activation_key on www as activation_link %}
+{% host_url feedjack.views.mainview on www as mainurl %}
+{% endspaceless %}
 {% blocktrans %}
 Hello.
-Your new {{site.domain}} account is ready.
+Your new {{ mainurl }} account is ready.
 Please click this activation link to finish your registration:
-<{{activation_link}}>
+<{{ activation_link }}>
 
 Please note, that this link is only valid for {{expiration_days}} days.
 {% endblocktrans %}
