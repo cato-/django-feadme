@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load hosts %}
-{% host_url registration.views.activate on www activation_key as activation_link %}
+{% host_url registration.views.activate activation_key=activation_key on www as activation_link %}
 {% blocktrans %}
 Hello.
 Your new {{site.domain}} account is ready.
