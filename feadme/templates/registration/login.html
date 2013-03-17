@@ -13,4 +13,5 @@
     </table>
     {% csrf_token %}
 </form>
+(Password forgotten? <a href="{% url 'django.contrib.auth.views.password_reset' %}">{% trans "Reset your password" %}</a>)
 {% endblock %}
