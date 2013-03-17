@@ -25,6 +25,7 @@ from django.views.generic.base import TemplateView
 
 from registration.views import activate
 from registration.views import register
+from django.contrib.auth.views import password_reset
 
 
 urlpatterns = patterns('',
@@ -50,5 +51,6 @@ urlpatterns = patterns('',
                            TemplateView.as_view(template_name='registration/registration_closed.html'),
                            name='registration_disallowed'),
                        url(r'^logout/$', 'django.contrib.auth.views.logout', {"next_page": "/"}),
+                       url(r'^password/reset/$', password_reset, {'template_name': 'registration/password_reset.html'}),
                        url(r'', include('registration.auth_urls')),
                        )
