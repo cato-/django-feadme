@@ -54,7 +54,6 @@ class RegistrationTest(TestCase):
             'activation_key': RegistrationProfile.objects.all()[0].activation_key
             }
         )
-        print activation_url
 
         response = self.c.post(self.register_url, self.form_data)
         self.assertEqual(len(mail.outbox), 1)
