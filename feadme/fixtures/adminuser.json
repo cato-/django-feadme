@@ -1,0 +1,18 @@
+[{
+  "pk": 1, 
+  "model": "auth.user", 
+  "fields": {
+    "username": "admin", 
+    "first_name": "", 
+    "last_name": "", 
+    "is_active": true, 
+    "is_superuser": true, 
+    "is_staff": true, 
+    "last_login": "2013-03-19T18:45:44.594Z", 
+    "groups": [], 
+    "user_permissions": [], 
+    "password": "pbkdf2_sha256$10000$7LXy92k3zFL0$EVgYN8hXxqlLXKoo6nVWmzcBMnlnv01zWYGbr8ynYuk=", 
+    "email": "admin@fead.me", 
+    "date_joined": "2013-03-16T14:04:01.074Z"
+  }
+}]

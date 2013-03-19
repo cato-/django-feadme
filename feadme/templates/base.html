@@ -30,7 +30,22 @@
     </div>
 </div>
 <div id="content">
-{% block content %}{% endblock %}
+    {% if messages %}
+    <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+        <p>{{ message|linebreaks }}</p>
+    </li>   
+        {% endfor %}
+    </ul>   
+    <!--<script>
+        jQuery("ul.messages li").hide();
+        jQuery("ul.messages").children("li").each(function(i, e){
+            jQuery(e).fadeIn(2000);
+        });
+    </script>-->
+    {% endif %}
+    {% block content %}{% endblock %}
 </div>
 <div id="sidebar">
     <h4>Profile</h4>
@@ -38,6 +53,7 @@
     {% if user.is_authenticated %}
         {% blocktrans %}You are logged in as <b>{{ user }}</b>{% endblocktrans %}<br />
         <ul>
+            <li><a href="{% url "feadme.views.profile_edit" %}">{% trans "Edit your profile" %}</a></li>
             <li><a href="{% url "django.contrib.auth.views.logout" %}?next=/">{% trans "Logout" %}</a></li>
         </ul>
     {% else %}
