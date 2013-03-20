@@ -53,7 +53,7 @@
     {% if user.is_authenticated %}
         {% blocktrans %}You are logged in as <b>{{ user }}</b>{% endblocktrans %}<br />
         <ul>
-            <li><a href="{% url "feadme.views.profile_edit" %}">{% trans "Edit your profile" %}</a></li>
+            <li><a href="{% url "feadme:profile_edit" %}">{% trans "Edit your profile" %}</a></li>
             <li><a href="{% url "django.contrib.auth.views.logout" %}?next=/">{% trans "Logout" %}</a></li>
         </ul>
     {% else %}
